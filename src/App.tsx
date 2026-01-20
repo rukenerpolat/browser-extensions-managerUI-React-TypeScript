@@ -1,7 +1,15 @@
+import { Header, Main } from "./app-layout"
+import AppHeader from "./components/app-header"
+
+
 function App() {
   return (
     <>
-      <h1 className="text-amber-600">Browser Extensions Manager UI</h1>
+      <Header>
+        <AppHeader/>
+      </Header>
+      
+      <Main></Main>
     </>
   )
 }
