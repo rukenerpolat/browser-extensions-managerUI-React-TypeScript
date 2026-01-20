@@ -1,0 +1,75 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url(./src/assets/fonts/NotoSans-VariableFont_wdth\,wght.ttf)
+  format("truetype-variations");
+  font-display: swap;
+  font-weight: 100 900;
+}
+
+@theme {
+  /* Colors */
+  --clr-neutral-900: hsl(227, 75%, 14%);  
+  --clr-neutral-800: hsl(226, 25%, 17%);  
+  --clr-neutral-700: hsl(225, 23%, 24%);  
+  --clr-neutral-600: hsl(226, 11%, 37%);  
+  --clr-neutral-300: hsl(0, 0%, 78%);  
+  --clr-neutral-200: hsl(217, 61%, 90%);  
+  --clr-neutral-100: hsl(0, 0%, 93%);  
+  --clr-neutral-0: hsl(200, 60%, 99%);
+  --clr-red-400: hsl(3, 86%, 64%);
+  --clr-red-500: hsl(3, 71%, 56%);
+  --clr-red-700: hsl(3, 77%, 44%);
+
+  --font-noto: "Noto Sans", system-ui, sans-serif;
+}
+
+@utility container {
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 1rem;
+}
+
+/* utilities */
+.text-preset-1 {
+  font-size: 2.125rem;
+  font-weight: bold;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.text-preset-2 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  line-height: 1.2;
+  letter-spacing: -0.2px;
+}
+
+.text-preset-3 {
+  font-size: 1.25rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.3px;
+}
+
+.text-preset-4 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.3px;
+}
+
+.text-preset-5 {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+}
+
+.text-preset-6 {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: -0.5px;
+}
