@@ -1,4 +1,4 @@
-import { Header, Main } from "./app-layout"
+import { Header } from "./app-layout"
 import AppHeader from "./components/app-header"
 
 
@@ -8,8 +8,6 @@ function App() {
       <Header>
         <AppHeader/>
       </Header>
-      
-      {/* <Main></Main> */}
     </>
   )
 }
