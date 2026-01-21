@@ -8,9 +8,9 @@
 
 <div align="center">
 
-This is my solution for the [Browser Extensions Manager UI challenge](https://www.frontendmentor.io/challenges/browser-extension-manager-ui-yNZnOfsMAp) <br> on [Frontend Mentor](https://www.frontendmentor.io/). <br>
+This is solution for the [Browser Extensions Manager UI challenge](https://www.frontendmentor.io/challenges/browser-extension-manager-ui-yNZnOfsMAp) <br> on [Frontend Mentor](https://www.frontendmentor.io/). <br>
 
-🌐 [View Live Page]()
+🌐 [View Live Page](https://browser-extensions-manager-ui-react.vercel.app/)
 
 </div>
 
@@ -18,11 +18,12 @@ This is my solution for the [Browser Extensions Manager UI challenge](https://ww
 
 ### Built With :
 
-– TailwindCSS  
-– TypeScript  
-– React
+- TailwindCSS
+- TypeScript
+- React  
+  -- ReactUse
 
-– Google Fonts – [Noto Sans](https://fonts.google.com/noto/specimen/Noto+Sans)
+- Google Fonts | [Noto Sans](https://fonts.google.com/noto/specimen/Noto+Sans)
 
 ## TODO:
 
