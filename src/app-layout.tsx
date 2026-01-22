@@ -5,7 +5,7 @@ export function Header({children}: {children:React.ReactNode}){
 }
 
 export function Main({children}: {children:React.ReactNode}){
-    return <main>
+    return <main className="my-16">
         {children}
     </main>
 }
