@@ -5,7 +5,7 @@ export default function ExtensionsHeader({
 }) {
   return (
     <header>
-        <div className="container flex items-center justify-between mb-8"> {children}</div>
+        <div className="container flex items-center justify-between mb-8 max-sm:flex-col max-sm:gap-6"> {children}</div>
     </header>
   )
 }
