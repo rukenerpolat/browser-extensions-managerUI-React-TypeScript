@@ -3,9 +3,11 @@ import SwitchButton from "./switch-button";
 
 type ExtensionsCardProps = {
     extensions: Extension[]
+    onDeleteExtension: (id: Extension["id"]) => void
 }
 
-export default function ExtensionsCard({extensions}: ExtensionsCardProps) {
+export default function ExtensionsCard({extensions,
+    onDeleteExtension}: ExtensionsCardProps) {
     return (
         <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-3">
             {extensions.map((extensions)=> (
@@ -26,7 +28,9 @@ export default function ExtensionsCard({extensions}: ExtensionsCardProps) {
                     </div>
 
                     <div className="flex justify-between items-center">
-                        <button className="border border-neutral-300 dark:border-neutral-600 
+                        <button
+                            onClick={()=> onDeleteExtension(extensions.id)}
+                            className="border border-neutral-300 dark:border-neutral-600 
                             rounded-full py-2 px-4 cursor-pointer hover:text-neutral-50 
                             hover:bg-red-700 dark:hover:text-neutral-900 dark:hover:bg-red-400 
                             hover:border-transparent duration-300">

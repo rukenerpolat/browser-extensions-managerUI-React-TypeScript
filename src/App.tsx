@@ -11,7 +11,13 @@ import type { Extension } from "./lib/types"
 
 function App() {
 
-  const [extensions] = useState<Extension[]>(data)
+  const [extensions, setExtensions] = useState<Extension[]>(data)
+
+  function handleDeleteExtension(idToDelete: Extension["id"]) {
+    setExtensions((prevExtensions) => 
+      prevExtensions.filter((extension) => extension.id !== idToDelete)
+    )
+  }
 
   return (
     <>
@@ -25,7 +31,10 @@ function App() {
         </ExtensionsHeader>
 
         <ExtensionsCards>
-          <ExtensionsCard extensions={extensions}/>
+          <ExtensionsCard
+            onDeleteExtension= {handleDeleteExtension} 
+            extensions={extensions}
+          />
         </ExtensionsCards>
       </Main>
     </>
