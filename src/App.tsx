@@ -5,8 +5,14 @@ import ExtensionsCards from "./components/extensions-cards"
 import ExtensionsCard from "./components/extensions-card"
 import ExtensionsHeader from "./components/extensions-header"
 import H1 from "./components/h-1"
+import {data} from "./lib/data"
+import { useState } from "react"
+import type { Extension } from "./lib/types"
 
 function App() {
+
+  const [extensions] = useState<Extension[]>(data)
+
   return (
     <>
       <Header>
@@ -19,7 +25,7 @@ function App() {
         </ExtensionsHeader>
 
         <ExtensionsCards>
-          <ExtensionsCard/>
+          <ExtensionsCard extensions={extensions}/>
         </ExtensionsCards>
       </Main>
     </>
