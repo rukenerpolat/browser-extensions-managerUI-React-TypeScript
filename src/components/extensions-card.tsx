@@ -4,10 +4,15 @@ import SwitchButton from "./switch-button";
 type ExtensionsCardProps = {
     extensions: Extension[]
     onDeleteExtension: (id: Extension["id"]) => void
+    onToggleExtencion: (id: Extension["id"]) => void
 }
 
-export default function ExtensionsCard({extensions,
-    onDeleteExtension}: ExtensionsCardProps) {
+export default function ExtensionsCard({
+    extensions,
+    onDeleteExtension,
+    onToggleExtencion
+    
+    }: ExtensionsCardProps) {
     return (
         <div className="grid grid-cols-[repeat(auto-fill,minmax(300px,1fr))] gap-3">
             {extensions.map((extensions)=> (
@@ -36,7 +41,10 @@ export default function ExtensionsCard({extensions,
                             hover:border-transparent duration-300">
                             Remove
                         </button>
-                        <SwitchButton/>
+                        <SwitchButton 
+                            checked = {extensions.isActive}
+                            onChange = {() => onToggleExtencion(extensions.id)}
+                        />
                     </div>
                 </article>
             ))}

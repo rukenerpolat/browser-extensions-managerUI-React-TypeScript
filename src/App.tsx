@@ -10,12 +10,20 @@ import { useState } from "react"
 import type { Extension } from "./lib/types"
 
 function App() {
-
   const [extensions, setExtensions] = useState<Extension[]>(data)
 
   function handleDeleteExtension(idToDelete: Extension["id"]) {
     setExtensions((prevExtensions) => 
       prevExtensions.filter((extension) => extension.id !== idToDelete)
+    )
+  }
+
+  function handleToggleExtension(idToToggle: Extension["id"]) {
+    setExtensions((prevExtensions) => 
+      prevExtensions.map((extension) =>
+        extension.id === idToToggle
+          ? {...extension, isActive: !extension.isActive} : extension
+      )
     )
   }
 
@@ -32,8 +40,9 @@ function App() {
 
         <ExtensionsCards>
           <ExtensionsCard
-            onDeleteExtension= {handleDeleteExtension} 
             extensions={extensions}
+            onDeleteExtension = {handleDeleteExtension}
+            onToggleExtencion = {handleToggleExtension}
           />
         </ExtensionsCards>
       </Main>
