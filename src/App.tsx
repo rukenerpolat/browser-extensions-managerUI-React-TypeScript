@@ -6,11 +6,27 @@ import ExtensionsCard from "./components/extensions-card"
 import ExtensionsHeader from "./components/extensions-header"
 import H1 from "./components/h-1"
 import {data} from "./lib/data"
-import { useState } from "react"
-import type { Extension } from "./lib/types"
+import { useMemo, useState } from "react"
+import type { ButtonFilters, Extension } from "./lib/types"
 
 function App() {
   const [extensions, setExtensions] = useState<Extension[]>(data)
+  const [activeFilter, setActiveFilter] = useState<ButtonFilters>("all")
+
+  const filteredExtension = useMemo(() => {
+    switch (activeFilter) {
+      case "active":
+        return extensions.filter((extensions) => extensions.isActive)
+      case "inactive":
+        return extensions.filter((extensions) => !extensions.isActive)
+      default:
+        return extensions
+    }
+  }, [extensions, activeFilter])
+
+  function handleFilterChange(filter: ButtonFilters) {
+    setActiveFilter(filter)
+  }
 
   function handleDeleteExtension(idToDelete: Extension["id"]) {
     setExtensions((prevExtensions) => 
@@ -35,12 +51,15 @@ function App() {
       <Main>
         <ExtensionsHeader>
           <H1/>
-          <ButtonGroup/>
+          <ButtonGroup 
+            onFilterChange = {handleFilterChange}
+            activeFilter = {activeFilter}
+          />
         </ExtensionsHeader>
 
         <ExtensionsCards>
           <ExtensionsCard
-            extensions={extensions}
+            extensions = {filteredExtension}
             onDeleteExtension = {handleDeleteExtension}
             onToggleExtencion = {handleToggleExtension}
           />
